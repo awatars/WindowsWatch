@@ -34,6 +34,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnStats = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,23 +81,34 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(399, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Поиск:";
             // 
-            // textBox1
+            // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(440, 38);
-            this.txtSearch.Name = "textBox1";
+            this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(231, 20);
             this.txtSearch.TabIndex = 5;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // button1
+            // 
+            this.btnStats.Location = new System.Drawing.Point(12, 12);
+            this.btnStats.Name = "button1";
+            this.btnStats.Size = new System.Drawing.Size(180, 73);
+            this.btnStats.TabIndex = 6;
+            this.btnStats.Text = "Показать статистику";
+            this.btnStats.UseVisualStyleBackColor = true;
+            this.btnStats.Click += new System.EventHandler(this.btnStats_Click);
             // 
             // OrdersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1001, 411);
+            this.ClientSize = new System.Drawing.Size(1001, 413);
+            this.Controls.Add(this.btnStats);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDelete);
@@ -119,5 +131,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnStats;
     }
 }

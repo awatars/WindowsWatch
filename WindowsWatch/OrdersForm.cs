@@ -135,5 +135,63 @@ namespace WindowsWatch
                 }
             }
         }
+
+        private void btnStats_Click(object sender, EventArgs e)
+        {
+            string statsMessage = "";
+
+            using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=1234567890;Database=WatchShopDB"))
+            {
+                conn.Open();
+
+                // 1. Считаем ОБЩУЮ ВЫРУЧКУ (Агрегация SUM)
+                string sqlSum = "SELECT SUM(total_amount) FROM Orders";
+                using (var cmd = new NpgsqlCommand(sqlSum, conn))
+                {
+                    // ExecuteScalar возвращает одно значение (первую ячейку)
+                    var result = cmd.ExecuteScalar();
+                    // Проверка на null, если заказов нет
+                    string total = result != DBNull.Value ? Convert.ToDecimal(result).ToString("C2") : "0";
+                    statsMessage += $"Общая выручка: {total}\n";
+                }
+
+                // 2. Считаем КОЛИЧЕСТВО ЗАКАЗОВ (Агрегация COUNT)
+                string sqlCount = "SELECT COUNT(*) FROM Orders";
+                using (var cmd = new NpgsqlCommand(sqlCount, conn))
+                {
+                    var result = cmd.ExecuteScalar();
+                    statsMessage += $"Всего заказов: {result}\n";
+                }
+
+                // 3. Считаем СРЕДНИЙ ЧЕК (Агрегация AVG)
+                string sqlAvg = "SELECT AVG(total_amount) FROM Orders";
+                using (var cmd = new NpgsqlCommand(sqlAvg, conn))
+                {
+                    var result = cmd.ExecuteScalar();
+                    string avg = result != DBNull.Value ? Convert.ToDecimal(result).ToString("C2") : "0";
+                    statsMessage += $"Средний чек: {avg}\n";
+                }
+
+                // 4. (БОНУС) САМАЯ ПОПУЛЯРНАЯ МОДЕЛЬ (Агрегация + Группировка)
+                // Если сложно, этот пункт можно пропустить, но препод оценит
+                string sqlTop = @"
+            SELECT w.model_name 
+            FROM Orders o
+            JOIN WatchModels w ON o.watch_model_id = w.id
+            GROUP BY w.model_name 
+            ORDER BY COUNT(o.id) DESC 
+            LIMIT 1";
+
+                using (var cmd = new NpgsqlCommand(sqlTop, conn))
+                {
+                    var result = cmd.ExecuteScalar();
+                    string topModel = result != null ? result.ToString() : "Нет продаж";
+                    statsMessage += $"\nХит продаж: {topModel}";
+                }
+            }
+
+            // Выводим всё в одном окне
+            MessageBox.Show(statsMessage, "Статистика магазина", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

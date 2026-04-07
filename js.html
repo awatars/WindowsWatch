@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="js.css">
+    <title>My js</title>
+</head>
+<body>
+    <input type="checkbox" id="burger-toggle"> 
+<header>
+    <div class="header">
+        <p class="logo">Лого</p>
+        <h1>Моя работа</h1>
+        <label for="burger-toggle" class="burger-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav">
+            <li> <a href="character.html">Характеристики</a></li>
+            <li> <a href="hobbies.html">Хобби</a></li>
+            <li> <a href="dtp.html">Дополнительно</a></li>
+            <li><a href="html.html">Вернуться домой</a></li>
+        </ul>
+    </div>
+</header>
+<div class="Calculator">
+    <h2>Калькулятор</h2>
+    <input type="text" id="input1" placeholder="Введите первое число">
+    <input type="text" id="input2" placeholder="Введите второе число">
+    <select id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <button onclick="calc()">Посчитать</button>
+    <p id="result">Результат: </p>
+</div>
+<div class="time">
+    <h2>Текущее время</h2>
+    <p id="message"></p>
+</div>
+<div class="convert">
+    <h2>Конвектор валют</h2>
+    <input type="number" id="amount">
+
+<select id="from">
+    <option value="rub">RUB</option>
+    <option value="usd">USD</option>
+    <option value="eur">EUR</option>
+</select>
+
+<select id="to">
+    <option value="usd">USD</option>
+    <option value="rub">RUB</option>
+    <option value="eur">EUR</option>
+</select>
+
+<button onclick="convert()">Конвертировать</button>
+
+<p id="conversionResult"></p>
+</div>
+<div id="stats">
+    <h2>Количество посетителей</h2>
+    <p id="visitCount"></p>
+    <p id="avgTime"></p>
+</div>
+<footer>
+        <div class="info">
+            <p><em>Контактная информация:</em></p>
+            <ul>
+                <li>Email: <a href="#">vb@mail.ru</a></li>
+                <li>Phone: +71111111111</li>
+                <li>Домашний адрес: Ул. Шишкина дом 9</li>
+            </ul>
+        </div>
+        <div class="form">
+    <p>Если остались какие-то дополнительные вопросы,<br> то вы можете написать ниже:</p>
+    <input type="text" id="fio" placeholder="Введите ФИО">
+    <input type="text" id="phone" placeholder="Введите телефон">
+    <input type="date" id="date">
+    <input type="file" id="photo">
+    <input type="text" id="question" placeholder="Ваш вопрос">
+    <button class="formbtn" onclick="submitForm()">Отправить</button>
+    <p id="fioOutput"></p>
+    <img id="preview" width="100">
+    &#169; 2026 Богачанский Владислав Дмитриевич. Все права защищены.
+        </div>
+        <div id="modal" class="modal">
+    <div class="modal-content">
+        <p>Форма успешно отправлена!</p>
+        <button onclick="closeModal()">Закрыть</button>
+    </div>
+</div>
+    </footer>
+</body>
+<script src="main.js"></script>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hobbies.css">
+    <title>Document</title>
+</head>
+<body>
+<input type="checkbox" id="burger-toggle"> 
+<header>
+    <div class="header">
+        <p class="logo">Лого</p>
+        <h1>Моя работа</h1>
+        <label for="burger-toggle" class="burger-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav">
+            <li> <a href="character.html">Характеристики</a></li>
+            <li> <a href="html.html">Вернуться домой</a></li>
+            <li> <a href="dtp.html">Дополнительно</a></li>
+            <li><a href="js.html">JavaScript</a></li>
+        </ul>
+    </div>
+</header>
+    <div class="basketball">
+        <div class="text">
+            <h2>Баскетбол</h2>
+            <p>Баскетбол - это командный вид спорта,<br> в котором две команды по пять игроков соревнуются за право <br> забросить мяч в корзину соперника. Цель игры - набрать больше очков, <br> чем противник, забрасывая мяч в корзину. Баскетбол требует от игроков <br> высокой физической подготовки, координации и командной работы.</p>
+            <p><em>"Я играю в баскетбол более 5 лет и мне оочень нравиться эта игра, <br> за 5 лет мне не надоела игра, играть в нее одно удовольствие. У меня есть множество награт грамот еще со школьных времен."</em></p>
+        </div>
+        <img src="./img/Снимок экрана — 2026-03-05 в 1.07.55 PM.png" alt="Баскетбол" width="300px" height="240px">
+    </div>
+    <div class="swimming">
+        <img src="./img/Снимок экрана — 2026-03-05 в 1.23.02 PM.png" alt="Плаванье" width="300px" height="240px">
+        <div class="text">
+            <h2>Плаванье</h2>
+            <p>Плавание - это вид спорта и физической активности, который включает в себя движение в воде с помощью различных стилей плавания. Плавание является отличным способом поддерживать физическую форму, улучшать выносливость и укреплять мышцы. Этот вид спорта также способствует развитию координации и дыхательной системы.</p>
+            <p><em>"Я занимаюсь плаванием уже несколько лет и мне очень нравится этот вид спорта, он помогает мне расслабиться и поддерживать хорошую физическую форму."</em></p>
+        </div>
+    </div>
+    <div class="reading">
+        <div class="text">
+            <h2>Чтение</h2>
+            <p>Чтение - это процесс восприятия и понимания письменного текста. Чтение может быть как развлекательным, так и образовательным, и является важным навыком для получения информации и расширения кругозора. Чтение помогает развивать воображение, улучшать словарный запас и критическое мышление.</p>
+            <p><em>"Я люблю читать книги разных жанров, от классической литературы до современной фантастики. Чтение помогает мне расслабиться и погрузиться в другие миры."</em></p>
+        </div>
+        <img src="./img/Снимок экрана — 2026-03-05 в 1.24.59 PM.png" alt="Чтение" width="300px" height="240px">
+    </div>
+    <footer>
+        <div class="info">
+            <p><em>Контактная информация:</em></p>
+            <ul>
+                <li>Email: <a href="#">vb@mail.ru</a></li>
+                <li>Phone: +71111111111</li>
+                <li>Домашний адрес: Ул. Шишкина дом 9</li>
+            </ul>
+        </div>
+        <div class="form">
+    <p>Если остались какие-то дополнительные вопросы,<br> то вы можете написать ниже:</p>
+    <input type="text" id="fio" placeholder="Введите ФИО">
+    <input type="text" id="phone" placeholder="Введите телефон">
+    <input type="date" id="date">
+    <input type="file" id="photo">
+    <input type="text" id="question" placeholder="Ваш вопрос">
+    <button class="formbtn" onclick="submitForm()">Отправить</button>
+    <p id="fioOutput"></p>
+    <img id="preview" width="100">
+    &#169; 2026 Богачанский Владислав Дмитриевич. Все права защищены.
+        </div>
+        <div id="modal" class="modal">
+    <div class="modal-content">
+        <p>Форма успешно отправлена!</p>
+        <button onclick="closeModal()">Закрыть</button>
+    </div>
+</div>
+    </footer>
+</body>
+<script src="main.js"></script>
+</html>

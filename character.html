@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="character.css">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" id="burger-toggle"> 
+<header>
+    <div class="header">
+        <p class="logo">Лого</p>
+        <h1>Моя работа</h1>
+        <label for="burger-toggle" class="burger-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav">
+            <li> <a href="html.html">Вернуться домой</a></li>
+            <li> <a href="hobbies.html">Хобби</a></li>
+            <li> <a href="dtp.html">Дополнительно</a></li>
+            <li><a href="js.html">JavaScript</a></li>
+        </ul>
+    </div>
+</header>
+    <div class="timely">
+        <div class="text">
+            <h2>Своевременный</h2>
+            <p>Это качество того, что происходит или делается именно тогда,<br> когда это нужно — в подходящий момент<br> или в строго установленный срок.</p>
+            <p><em>"Я своевременный потому что не откладываю важные дела на завтра <br> и стараюсь делть все вовремя чтобы не делать абсолютно всю работу<br> в последний момент."</em></p>
+        </div>
+        <img src="./img/Снимок экрана — 2026-03-05 в 11.59.26 AM.png" alt="Своевременный" width="300px" height="240px">
+    </div>
+    <div class="responsible">
+        <img src="./img/Снимок экрана — 2026-03-05 в 12.23.38 PM.png" alt="Ответственный" width="300px" height="240px">
+        <div class="text">
+            <h2>Ответственный</h2>
+            <p>Это качество человека, который выполняет свои обязанности и<br> принимает на себя ответственность за свои действия и решения.</p>
+            <p><em>"Я ответственный потому что всегда выполняю свои обещания<br> и стараюсь не подводить людей которые на меня рассчитывают."</em></p>
+        </div>
+    </div>
+    <div class="communicative">
+        <div class="text">
+            <h2>Коммуникабельный</h2>
+            <p>Это качество человека, который легко и эффективно общается с другими людьми,<br> устанавливает контакты и поддерживает отношения.</p>
+            <p><em>"Я коммуникабельный потому что легко нахожу общий язык с людьми<br> и всегда стараюсь поддерживать хорошие отношения с окружающими."</em></p>
+        </div>
+        <img src="./img/Снимок экрана — 2026-03-05 в 12.29.42 PM.png" alt="Коммуникабельный" width="300px" height="240px">
+
+    </div>
+    <footer>
+        <div class="info">
+            <p><em>Контактная информация:</em></p>
+            <ul>
+                <li>Email: <a href="#">vb@mail.ru</a></li>
+                <li>Phone: +71111111111</li>
+                <li>Домашний адрес: Ул. Шишкина дом 9</li>
+            </ul>
+        </div>
+        <div class="form">
+    <p>Если остались какие-то дополнительные вопросы,<br> то вы можете написать ниже:</p>
+    <input type="text" id="fio" placeholder="Введите ФИО">
+    <input type="text" id="phone" placeholder="Введите телефон">
+    <input type="date" id="date">
+    <input type="file" id="photo">
+    <input type="text" id="question" placeholder="Ваш вопрос">
+    <button class="formbtn" onclick="submitForm()">Отправить</button>
+    <p id="fioOutput"></p>
+    <img id="preview" width="100">
+    &#169; 2026 Богачанский Владислав Дмитриевич. Все права защищены.
+        </div>
+        <div id="modal" class="modal">
+    <div class="modal-content">
+        <p>Форма успешно отправлена!</p>
+        <button onclick="closeModal()">Закрыть</button>
+    </div>
+</div>
+    </footer>
+</body>
+<script src="main.js"></script>
+</html>
